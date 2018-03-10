@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://www.wenkiwu.com">
-  <title>Category: 建站 | Wenki&#39;s Blog</title>
+  <title>使用GitHub Pages部署个人网站 | Wenki&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Wenki&#39;s Blog">
-<meta property="og:url" content="https://www.wenkiwu.com/categories/建站/index.html">
+  <meta name="description" content="GitHub Pages前往GitHub官网，登录或注册账号新建仓库，仓库名为yourname.github.io。其中yourname填写你的GitHub账户名，创建成功后，GitHub会自动为你开启Github pages Hexo部署使用Hexo建站完成并测试后，即可发布到github。 修改_config_yml文件12345deploy:  type: git  repo: https:">
+<meta name="keywords" content="hexo,GitHub Pages">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用GitHub Pages部署个人网站">
+<meta property="og:url" content="https://www.wenkiwu.com/2018/01/20/using-GithubPages-deploy-personal-site/index.html">
 <meta property="og:site_name" content="Wenki&#39;s Blog">
+<meta property="og:description" content="GitHub Pages前往GitHub官网，登录或注册账号新建仓库，仓库名为yourname.github.io。其中yourname填写你的GitHub账户名，创建成功后，GitHub会自动为你开启Github pages Hexo部署使用Hexo建站完成并测试后，即可发布到github。 修改_config_yml文件12345deploy:  type: git  repo: https:">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-10T06:22:44.408Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wenki&#39;s Blog">
+<meta name="twitter:title" content="使用GitHub Pages部署个人网站">
+<meta name="twitter:description" content="GitHub Pages前往GitHub官网，登录或注册账号新建仓库，仓库名为yourname.github.io。其中yourname填写你的GitHub账户名，创建成功后，GitHub会自动为你开启Github pages Hexo部署使用Hexo建站完成并测试后，即可发布到github。 修改_config_yml文件12345deploy:  type: git  repo: https:">
   
     <link rel="alternative" href="/atom.xml" title="Wenki&#39;s Blog" type="application/atom+xml">
   
@@ -167,36 +172,95 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-using-GithubPages-deploy-personal-site" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/20/using-GithubPages-deploy-personal-site/" class="archive-article-date">
-  	<time datetime="2018-01-20T09:20:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-20</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/20/using-GithubPages-deploy-personal-site/">使用GitHub Pages部署个人网站</a>
+    <h1 class="article-title" itemprop="name">
+      使用GitHub Pages部署个人网站
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/01/20/using-GithubPages-deploy-personal-site/" class="archive-article-date">
+  	<time datetime="2018-01-20T09:20:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h4><p>前往<a href="https://github.com" target="_blank" rel="noopener">GitHub官网</a>，登录或注册账号<br>新建仓库，仓库名为<code>yourname.github.io</code>。其中<code>yourname</code>填写你的GitHub账户名，创建成功后，GitHub会自动为你开启Github pages</p>
+<h4 id="Hexo部署"><a href="#Hexo部署" class="headerlink" title="Hexo部署"></a>Hexo部署</h4><p>使用Hexo建站完成并测试后，即可发布到github。</p>
+<h5 id="修改-config-yml文件"><a href="#修改-config-yml文件" class="headerlink" title="修改_config_yml文件"></a>修改<code>_config_yml</code>文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  message: commit message</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">repo</td>
+<td style="text-align:left">GitHub仓库URL</td>
+</tr>
+<tr>
+<td style="text-align:left">branch</td>
+<td style="text-align:left">提交到哪个分支(可选)</td>
+</tr>
+<tr>
+<td style="text-align:left">message</td>
+<td style="text-align:left">自定义提交信息(可选)</td>
+</tr>
+</tbody>
+</table>
+<h5 id="安装hexo-deployer-git模块"><a href="#安装hexo-deployer-git模块" class="headerlink" title="安装hexo-deployer-git模块"></a>安装<code>hexo-deployer-git</code>模块</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h5 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo generate</span><br><span class="line">&gt; hexo deploy</span><br></pre></td></tr></table></figure>
+<p>也可简写成<code>hexo g -d</code>或<code>hexo d -g</code></p>
+<p>部署完成后，即可访问 <a href="https://yourname.github.io/" target="_blank" rel="noopener">https://yourname.github.io/</a> 查看你的个人网站了</p>
+<h4 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h4><p>GitHub Pages允许为网站绑定自己的域名，替代 <code>yourname.github.io</code> 作为网站的访问地址。</p>
+<p>在Hexo网站项目的<code>source</code>目录下新建文件<code>CNAME</code>，写入你的域名，如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.wenkiwu.com</span><br></pre></td></tr></table></figure></p>
+<p>修改完成后部署</p>
+<p>前往域名注册商添加解析记录</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">主机记录</th>
+<th style="text-align:center">记录类型</th>
+<th style="text-align:center">记录值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">www</td>
+<td style="text-align:center">CNAME</td>
+<td style="text-align:center">yourname.github.io</td>
+</tr>
+<tr>
+<td style="text-align:center">@</td>
+<td style="text-align:center">CNAME</td>
+<td style="text-align:center">yourname.github.io</td>
+</tr>
+</tbody>
+</table>
+<p>设置完成后等待生效</p>
+<h4 id="将网站源文件使用git管理"><a href="#将网站源文件使用git管理" class="headerlink" title="将网站源文件使用git管理"></a>将网站源文件使用git管理</h4><p>在github上创建仓库  </p>
+<p>进入网站项目根目录，执行下面命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; git init</span><br><span class="line">&gt; git remote add origin [repository url]</span><br><span class="line">&gt; git add .</span><br><span class="line">&gt; git commit -m &apos;message&apos;</span><br><span class="line">&gt; git push --set-upstream origin master</span><br></pre></td></tr></table></figure></p>
+<p>在其它电脑上就可获取项目源文件修改并部署<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone [repository url]</span><br></pre></td></tr></table></figure></p>
+<p>进入项目根目录，此电脑已有nodejs并安装hexo的情况下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>新建文件或者修改项目，测试后部署<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure></p>
+<p>将更改提交到远程仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -212,7 +276,7 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -225,66 +289,62 @@ var _hmt = _hmt || [];
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/20/using-hexo-build-personal-site/" class="archive-article-date">
-  	<time datetime="2018-01-20T07:16:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-20</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/01/28/cross-application-screenshot-on-Android 5.0+/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Android 5.0以上使用MediaProjection跨应用截屏
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/20/using-hexo-build-personal-site/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo搭建个人网站</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/20/using-hexo-build-personal-site/">Hexo搭建个人网站</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/建站//" class="article-tag-list-link color3">建站</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -307,10 +367,10 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",

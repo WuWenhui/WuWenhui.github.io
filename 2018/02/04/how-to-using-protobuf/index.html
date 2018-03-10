@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://www.wenkiwu.com">
-  <title>Category: 建站 | Wenki&#39;s Blog</title>
+  <title>Google Protocol Buffer使用 | Wenki&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Wenki&#39;s Blog">
-<meta property="og:url" content="https://www.wenkiwu.com/categories/建站/index.html">
+  <meta name="description" content="protobuf是一个灵活高效的序列化数据结构的方案，类似XML，但是更小更快更简单。它包含一种用于描述数据结构的接口描述语言和一个用于生成不同编程语言的源代码生成器。通常用于数据交换和数据存储。相比JSON和XML，protobuf拥有以下优点：  数据小：序列化后，数据小3-10倍 速度快：序列化速度快20-100倍 使用简单：proto编译器自动生成数据访问类 加密性：存储和传输的是字节 兼">
+<meta name="keywords" content="protobuf,Protocol Buffer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google Protocol Buffer使用">
+<meta property="og:url" content="https://www.wenkiwu.com/2018/02/04/how-to-using-protobuf/index.html">
 <meta property="og:site_name" content="Wenki&#39;s Blog">
+<meta property="og:description" content="protobuf是一个灵活高效的序列化数据结构的方案，类似XML，但是更小更快更简单。它包含一种用于描述数据结构的接口描述语言和一个用于生成不同编程语言的源代码生成器。通常用于数据交换和数据存储。相比JSON和XML，protobuf拥有以下优点：  数据小：序列化后，数据小3-10倍 速度快：序列化速度快20-100倍 使用简单：proto编译器自动生成数据访问类 加密性：存储和传输的是字节 兼">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-10T06:20:17.550Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wenki&#39;s Blog">
+<meta name="twitter:title" content="Google Protocol Buffer使用">
+<meta name="twitter:description" content="protobuf是一个灵活高效的序列化数据结构的方案，类似XML，但是更小更快更简单。它包含一种用于描述数据结构的接口描述语言和一个用于生成不同编程语言的源代码生成器。通常用于数据交换和数据存储。相比JSON和XML，protobuf拥有以下优点：  数据小：序列化后，数据小3-10倍 速度快：序列化速度快20-100倍 使用简单：proto编译器自动生成数据访问类 加密性：存储和传输的是字节 兼">
   
     <link rel="alternative" href="/atom.xml" title="Wenki&#39;s Blog" type="application/atom+xml">
   
@@ -167,124 +172,128 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-how-to-using-protobuf" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/20/using-GithubPages-deploy-personal-site/" class="archive-article-date">
-  	<time datetime="2018-01-20T09:20:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-20</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/20/using-GithubPages-deploy-personal-site/">使用GitHub Pages部署个人网站</a>
+    <h1 class="article-title" itemprop="name">
+      Google Protocol Buffer使用
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/02/04/how-to-using-protobuf/" class="archive-article-date">
+  	<time datetime="2018-02-04T05:50:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>protobuf是一个灵活高效的序列化数据结构的方案，类似<code>XML</code>，但是更小更快更简单。它包含一种用于描述数据结构的接口描述语言和一个用于生成不同编程语言的源代码生成器。通常用于数据交换和数据存储。<br>相比<code>JSON</code>和<code>XML</code>，protobuf拥有以下优点：</p>
+<ul>
+<li>数据小：序列化后，数据小3-10倍</li>
+<li>速度快：序列化速度快20-100倍</li>
+<li>使用简单：proto编译器自动生成数据访问类</li>
+<li>加密性：存储和传输的是字节</li>
+<li>兼容性好： 不必破坏旧数据格式就可以实现数据结构的更新</li>
+</ul>
+<h4 id="定义协议格式"><a href="#定义协议格式" class="headerlink" title="定义协议格式"></a>定义协议格式</h4><p>创建<code>.proto</code>文件，为每个需要序列化的数据结构添加一个<code>message</code>，在每个<code>message</code>中为每一个字段指定名称和类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">syntax = &quot;proto2&quot;;</span><br><span class="line"></span><br><span class="line">package tutorial;</span><br><span class="line"></span><br><span class="line">option java_package = &quot;com.example.tutorial&quot;;</span><br><span class="line">option java_outer_classname = &quot;AddressBookProtos&quot;;</span><br><span class="line"></span><br><span class="line">message Person &#123;</span><br><span class="line">  required string name = 1;</span><br><span class="line">  required int32 id = 2;</span><br><span class="line">  optional string email = 3;</span><br><span class="line"></span><br><span class="line">  enum PhoneType &#123;</span><br><span class="line">    MOBILE = 0;</span><br><span class="line">    HOME = 1;</span><br><span class="line">    WORK = 2;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  message PhoneNumber &#123;</span><br><span class="line">    required string number = 1;</span><br><span class="line">    optional PhoneType type = 2 [default = HOME];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  repeated PhoneNumber phones = 4;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">message AddressBook &#123;</span><br><span class="line">  repeated Person people = 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="生成源文件"><a href="#生成源文件" class="headerlink" title="生成源文件"></a>生成源文件</h4><p>使用 protobuf 编译器生成java类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protoc -I=$SRC_DIR --java_out=$DST_DIR $SRC_DIR/file.proto</span><br></pre></td></tr></table></figure></p>
+<p>Android Studio使用gradle插件(<a href="https://github.com/google/protobuf-gradle-plugin" target="_blank" rel="noopener">https://github.com/google/protobuf-gradle-plugin</a>)自动编译<code>.proto</code>文件</p>
+<h4 id="创建实例"><a href="#创建实例" class="headerlink" title="创建实例"></a>创建实例</h4><p>为了构造一个<code>message</code>，你必须首先构造一个构建器，将你想要设置的字段设置为你选择的值，然后调用构建器的<code>build()</code>方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Person john = Person.newBuilder()</span><br><span class="line">    .setId(<span class="number">1234</span>)</span><br><span class="line">    .setName(<span class="string">"John Doe"</span>)</span><br><span class="line">    .setEmail(<span class="string">"jdoe@example.com"</span>)</span><br><span class="line">    .addPhones(Person.PhoneNumber.newBuilder()</span><br><span class="line">        .setNumber(<span class="string">"555-4321"</span>)</span><br><span class="line">        .setType(Person.PhoneType.HOME))</span><br><span class="line">    .build();</span><br></pre></td></tr></table></figure></p>
+<h4 id="序列化和反序列化"><a href="#序列化和反序列化" class="headerlink" title="序列化和反序列化"></a>序列化和反序列化</h4><ul>
+<li><code>byte[] toByteArray();</code>: 将`message序列化为byte数组</li>
+<li><code>static Person parseFrom(byte[] data);</code>: 从byte数组中解析出<code>message</code></li>
+<li><code>void writeTo(OutputStream output);</code>： 将<code>message</code>序列化到给定的<code>OutputStream</code>中</li>
+<li><code>static Person parseFrom(InputStream input);</code>: 从<code>InputStream</code>中读取并解析成<code>message</code></li>
+</ul>
+<p>更多用法参见<a href="https://developers.google.com/protocol-buffers/docs/javatutorial" target="_blank" rel="noopener">官方文档</a>  </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">protobuf</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">GitHub Pages</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Protocol Buffer</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/建站//" class="article-tag-list-link color3">建站</a>
+        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/20/using-hexo-build-personal-site/" class="archive-article-date">
-  	<time datetime="2018-01-20T07:16:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/28/cross-application-screenshot-on-Android 5.0+/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android 5.0以上使用MediaProjection跨应用截屏</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/20/using-hexo-build-personal-site/">Hexo搭建个人网站</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/建站//" class="article-tag-list-link color3">建站</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -307,10 +316,10 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",

@@ -98,25 +98,27 @@
 
 
 
-  <meta name="description" content="隐藏应用程序的启动图标在App的 AndroidManifest.xml 中，将启动页的 intent-filter 做如下修改1234&amp;lt;intent-filter&amp;gt;    &amp;lt;action android:name=&quot;android.intent.action.MAIN&quot; /&amp;gt;    &amp;lt;category android:name=&quot;android.intent.cat">
-<meta name="keywords" content="Android">
+  <meta name="description" content="nodejs和npm安装前往Node.js下载页下载最新的LTS版本。 按步骤安装Node.js，注意选择安装 npm package manager 和 Ad to PATH。  使用 npm -v 测试是否已成功安装">
+<meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android如何做到应用程序图标隐藏，并由第三方程序启动">
-<meta property="og:url" content="https://www.wenkiwu.com/2015/09/13/lauch-app-in-other-app/index.html">
+<meta property="og:title" content="Hexo搭建个人网站">
+<meta property="og:url" content="https://www.wenkiwu.com/建站/using-hexo-build-personal-site/index.html">
 <meta property="og:site_name" content="Wenki&#39;s Blog">
-<meta property="og:description" content="隐藏应用程序的启动图标在App的 AndroidManifest.xml 中，将启动页的 intent-filter 做如下修改1234&amp;lt;intent-filter&amp;gt;    &amp;lt;action android:name=&quot;android.intent.action.MAIN&quot; /&amp;gt;    &amp;lt;category android:name=&quot;android.intent.cat">
+<meta property="og:description" content="nodejs和npm安装前往Node.js下载页下载最新的LTS版本。 按步骤安装Node.js，注意选择安装 npm package manager 和 Ad to PATH。  使用 npm -v 测试是否已成功安装">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-14T15:16:43.173Z">
+<meta property="og:image" content="https://www.wenkiwu.com/assets/images/nodejs-install.png">
+<meta property="og:updated_time" content="2018-04-02T14:02:02.157Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android如何做到应用程序图标隐藏，并由第三方程序启动">
-<meta name="twitter:description" content="隐藏应用程序的启动图标在App的 AndroidManifest.xml 中，将启动页的 intent-filter 做如下修改1234&amp;lt;intent-filter&amp;gt;    &amp;lt;action android:name=&quot;android.intent.action.MAIN&quot; /&amp;gt;    &amp;lt;category android:name=&quot;android.intent.cat">
+<meta name="twitter:title" content="Hexo搭建个人网站">
+<meta name="twitter:description" content="nodejs和npm安装前往Node.js下载页下载最新的LTS版本。 按步骤安装Node.js，注意选择安装 npm package manager 和 Ad to PATH。  使用 npm -v 测试是否已成功安装">
+<meta name="twitter:image" content="https://www.wenkiwu.com/assets/images/nodejs-install.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://www.wenkiwu.com/2015/09/13/lauch-app-in-other-app/"/>
+  <link rel="canonical" href="https://www.wenkiwu.com/建站/using-hexo-build-personal-site/"/>
 
 
 
@@ -126,7 +128,7 @@
   };
 </script>
 
-  <title>Android如何做到应用程序图标隐藏，并由第三方程序启动 | Wenki's Blog</title>
+  <title>Hexo搭建个人网站 | Wenki's Blog</title>
   
 
 
@@ -275,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.wenkiwu.com/2015/09/13/lauch-app-in-other-app/">
+    <link itemprop="mainEntityOfPage" href="https://www.wenkiwu.com/建站/using-hexo-build-personal-site/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wenki">
@@ -292,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Android如何做到应用程序图标隐藏，并由第三方程序启动</h1>
+          <h1 class="post-title" itemprop="name headline">Hexo搭建个人网站</h1>
         
 
         <div class="post-meta">
@@ -304,7 +306,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-13T15:32:28+08:00">2015-09-13</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T15:16:55+08:00">2018-01-20</time>
             
 
             
@@ -325,7 +327,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/建站/" itemprop="url" rel="index"><span itemprop="name">建站</span></a></span>
 
                 
                 
@@ -359,11 +361,26 @@
       
 
       
-        <h5 id="隐藏应用程序的启动图标"><a href="#隐藏应用程序的启动图标" class="headerlink" title="隐藏应用程序的启动图标"></a>隐藏应用程序的启动图标</h5><p>在App的 <code>AndroidManifest.xml</code> 中，将启动页的 <code>intent-filter</code> 做如下修改<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.DEFAULT"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h5 id="第三方程序启动App"><a href="#第三方程序启动App" class="headerlink" title="第三方程序启动App"></a>第三方程序启动App</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_MAIN);</span><br><span class="line">intent.setComponent(<span class="keyword">new</span> ComponentName(<span class="string">"com.test.app"</span>, <span class="string">"com.test.app.MainActivity"</span>));</span><br><span class="line">intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);</span><br><span class="line">startActivity(intent);</span><br></pre></td></tr></table></figure>
-<p>其中 <code>com.test.app</code> 为应用程序包名，而 <code>com.test.app.MainActivity</code> 为你所要启动的第一个Activity，即上面所指的启动页</p>
-<a id="more"></a>
-<p>如果你不知道启动页，或者你的启动页会变化，那么你也可以如下调用<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">startApp</span><span class="params">(String packageName)</span> </span>&#123;</span><br><span class="line">    Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_MAIN, <span class="keyword">null</span>);</span><br><span class="line">    intent.addCategory(Intent.CATEGORY_DEFAULT);</span><br><span class="line">    PackageManager pm = getPackageManager();</span><br><span class="line">    List&lt;ResolveInfo&gt; listInfos = pm.queryIntentActivities(intent, <span class="number">0</span>);</span><br><span class="line">    String className = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">for</span> (ResolveInfo info : listInfos) &#123;</span><br><span class="line">        <span class="keyword">if</span> (packageName.equals(info.activityInfo.packageName)) &#123;</span><br><span class="line">            className = info.activityInfo.name;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (className != <span class="keyword">null</span> &amp;&amp; className.length() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        intent.setComponent(<span class="keyword">new</span> ComponentName(packageName, className));</span><br><span class="line">        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK</span><br><span class="line">            | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);</span><br><span class="line">        startActivity(intent);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h4 id="nodejs和npm安装"><a href="#nodejs和npm安装" class="headerlink" title="nodejs和npm安装"></a>nodejs和npm安装</h4><p>前往<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js下载页</a>下载最新的LTS版本。</p>
+<p>按步骤安装Node.js，注意选择安装 <code>npm package manager</code> 和 <code>Ad to PATH</code>。<br> <img src="/assets/images/nodejs-install.png" alt="node install"></p>
+<p>使用 <code>npm -v</code> 测试是否已成功安装<br><a id="more"></a></p>
+<h4 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h4><p>使用npm安装Hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
+<p>如果觉得安装模块太慢，可设置淘宝NPM镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></p>
+<h4 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h4><h5 id="初始化目录"><a href="#初始化目录" class="headerlink" title="初始化目录"></a>初始化目录</h5><p>安装完成后，前往项目文件夹执行命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd D:\HexoPages</span><br><span class="line">&gt; hexo init</span><br><span class="line">&gt; npm install</span><br></pre></td></tr></table></figure></p>
+<p>完成后，文件夹目录大致有</p>
+<ul>
+<li><strong>scaffolds</strong>  模板文件夹。新建文章时，Hexo会根据此文件夹中的文件，在新建的markdown文件中默认填充内容</li>
+<li><strong>source</strong>  资源文件夹。存放用户资源的地方</li>
+<li><strong>themes</strong>  主题文件夹。Hexo会根据主题来生成静态页面</li>
+<li><strong>.gitignore</strong>  Git版本控制配置文件</li>
+<li><strong>_config.yml</strong>  网站配置文件</li>
+<li><strong>package.json</strong>  应用程序配置信息</li>
+</ul>
+<h5 id="新建文件"><a href="#新建文件" class="headerlink" title="新建文件"></a>新建文件</h5><p><code>hexo new [layout] &lt;title&gt;</code> 命令用于使用指定布局新建文章，<code>layout</code> 用于指定文章的布局，默认是<code>post</code>。Hexo 会根据 <em>scaffolds</em> 文件夹内相对应的文件来建立文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo new hello</span><br></pre></td></tr></table></figure></p>
+<p>Hexo 默认以标题作为文件的名称，也可通过 <em>_config.yml</em> 的 <code>new_post_name</code> 参数来修改默认的文件名称</p>
+<h5 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo generate</span><br></pre></td></tr></table></figure>
+<h5 id="启动服务器"><a href="#启动服务器" class="headerlink" title="启动服务器"></a>启动服务器</h5><p>安装<code>hexo-server</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; npm install hexo-server --save</span><br></pre></td></tr></table></figure></p>
+<p>安装完成后启动服务器，默认使用4000端口，使用<code>-p</code>指定端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo server -p 4001</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -384,7 +401,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag"># Android</a>
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
           
         </div>
       
@@ -397,14 +414,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/Android/android 7.0-fileprovider-uri/" rel="next" title="Android 7.0 使用 FileProvider 共享文件">
+                <i class="fa fa-chevron-left"></i> Android 7.0 使用 FileProvider 共享文件
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/09/android-switch-frangment/" rel="prev" title="Android 切换 Fragment 时不重新实例化">
-                Android 切换 Fragment 时不重新实例化 <i class="fa fa-chevron-right"></i>
+              <a href="/建站/using-GithubPages-deploy-personal-site/" rel="prev" title="使用GitHub Pages部署个人网站">
+                使用GitHub Pages部署个人网站 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -557,7 +578,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#隐藏应用程序的启动图标"><span class="nav-number">1.</span> <span class="nav-text">隐藏应用程序的启动图标</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第三方程序启动App"><span class="nav-number">2.</span> <span class="nav-text">第三方程序启动App</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#nodejs和npm安装"><span class="nav-number">1.</span> <span class="nav-text">nodejs和npm安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hexo安装"><span class="nav-number">2.</span> <span class="nav-text">Hexo安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建站"><span class="nav-number">3.</span> <span class="nav-text">建站</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#初始化目录"><span class="nav-number">3.1.</span> <span class="nav-text">初始化目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新建文件"><span class="nav-number">3.2.</span> <span class="nav-text">新建文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#生成静态文件"><span class="nav-number">3.3.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#启动服务器"><span class="nav-number">3.4.</span> <span class="nav-text">启动服务器</span></a></li></ol></li></ol></div>
             
 
           </div>

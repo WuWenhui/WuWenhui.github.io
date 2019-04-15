@@ -98,25 +98,25 @@
 
 
 
-  <meta name="description" content="以前实现 Fragment 的切换都是用 replace 方法实现123456public void startFragmentAdd(Fragment fragment) &amp;#123;    FragmentManager fragmentManager = getSupportFragmentManager();    FragmentTransaction fragmentTransacti">
-<meta name="keywords" content="Android">
+  <meta name="description" content="GitHub Pages前往GitHub官网，登录或注册账号新建仓库，仓库名为yourname.github.io。其中yourname填写你的GitHub账户名，创建成功后，GitHub会自动为你开启Github pages Hexo部署使用Hexo建站完成并测试后，即可发布到github。">
+<meta name="keywords" content="hexo,GitHub Pages">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android 切换 Fragment 时不重新实例化">
-<meta property="og:url" content="https://www.wenkiwu.com/2016/05/09/android-switch-frangment/index.html">
+<meta property="og:title" content="使用GitHub Pages部署个人网站">
+<meta property="og:url" content="https://www.wenkiwu.com/建站/using-GithubPages-deploy-personal-site/index.html">
 <meta property="og:site_name" content="Wenki&#39;s Blog">
-<meta property="og:description" content="以前实现 Fragment 的切换都是用 replace 方法实现123456public void startFragmentAdd(Fragment fragment) &amp;#123;    FragmentManager fragmentManager = getSupportFragmentManager();    FragmentTransaction fragmentTransacti">
+<meta property="og:description" content="GitHub Pages前往GitHub官网，登录或注册账号新建仓库，仓库名为yourname.github.io。其中yourname填写你的GitHub账户名，创建成功后，GitHub会自动为你开启Github pages Hexo部署使用Hexo建站完成并测试后，即可发布到github。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-14T15:16:59.953Z">
+<meta property="og:updated_time" content="2018-04-02T14:00:13.705Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 切换 Fragment 时不重新实例化">
-<meta name="twitter:description" content="以前实现 Fragment 的切换都是用 replace 方法实现123456public void startFragmentAdd(Fragment fragment) &amp;#123;    FragmentManager fragmentManager = getSupportFragmentManager();    FragmentTransaction fragmentTransacti">
+<meta name="twitter:title" content="使用GitHub Pages部署个人网站">
+<meta name="twitter:description" content="GitHub Pages前往GitHub官网，登录或注册账号新建仓库，仓库名为yourname.github.io。其中yourname填写你的GitHub账户名，创建成功后，GitHub会自动为你开启Github pages Hexo部署使用Hexo建站完成并测试后，即可发布到github。">
 
 
 
 
 
 
-  <link rel="canonical" href="https://www.wenkiwu.com/2016/05/09/android-switch-frangment/"/>
+  <link rel="canonical" href="https://www.wenkiwu.com/建站/using-GithubPages-deploy-personal-site/"/>
 
 
 
@@ -126,7 +126,7 @@
   };
 </script>
 
-  <title>Android 切换 Fragment 时不重新实例化 | Wenki's Blog</title>
+  <title>使用GitHub Pages部署个人网站 | Wenki's Blog</title>
   
 
 
@@ -275,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.wenkiwu.com/2016/05/09/android-switch-frangment/">
+    <link itemprop="mainEntityOfPage" href="https://www.wenkiwu.com/建站/using-GithubPages-deploy-personal-site/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wenki">
@@ -292,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Android 切换 Fragment 时不重新实例化</h1>
+          <h1 class="post-title" itemprop="name headline">使用GitHub Pages部署个人网站</h1>
         
 
         <div class="post-meta">
@@ -304,7 +304,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-09T14:41:31+08:00">2016-05-09</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T17:20:32+08:00">2018-01-20</time>
             
 
             
@@ -325,7 +325,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/建站/" itemprop="url" rel="index"><span itemprop="name">建站</span></a></span>
 
                 
                 
@@ -359,8 +359,67 @@
       
 
       
-        <p>以前实现 Fragment 的切换都是用 <code>replace</code> 方法实现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startFragmentAdd</span><span class="params">(Fragment fragment)</span> </span>&#123;</span><br><span class="line">    FragmentManager fragmentManager = getSupportFragmentManager();</span><br><span class="line">    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();</span><br><span class="line">    fragmentTransaction.replace(R.id.main_layout, fragment, fragment.getClass().getName())</span><br><span class="line">        .commit();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><code>replace()</code> 方法只是在上一个 Fragment 不再需要时采用的简便方法。因此，每次切换的时候，Fragment 都会重新实例化，重新加载数据。<br>如果要实现 Fragment 切换时不重新实例化，正确的切换方式是 <code>add()</code> ，切换时 <code>hide()</code> 当前，<code>add()</code> 另一个 Fragment；再次切换时，只需 <code>hide()</code> 当前，<code>show()</code> 另一个。<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fragment的切换</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">startFragmentAdd</span><span class="params">(Fragment fragment)</span> </span>&#123;</span><br><span class="line">    FragmentManager fragmentManager = getSupportFragmentManager();</span><br><span class="line">    FragmentTransaction fragmentTransaction = fragmentManager</span><br><span class="line">         .beginTransaction();</span><br><span class="line">    <span class="keyword">if</span> (current_fragment == <span class="keyword">null</span>) &#123;</span><br><span class="line">        fragmentTransaction.add(R.id.main_layout, fragment).commit();</span><br><span class="line">        current_fragment = fragment;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (current_fragment != fragment) &#123;</span><br><span class="line">        <span class="comment">// 先判断是否被add过</span></span><br><span class="line">        <span class="keyword">if</span> (!fragment.isAdded()) &#123;</span><br><span class="line">            <span class="comment">// 隐藏当前的fragment，add下一个到Activity中</span></span><br><span class="line">            fragmentTransaction.hide(current_fragment)</span><br><span class="line">                  .add(R.id.main_layout, fragment).commit();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 隐藏当前的fragment，显示下一个</span></span><br><span class="line">            fragmentTransaction.hide(current_fragment).show(fragment)</span><br><span class="line">                  .commit();</span><br><span class="line">        &#125;</span><br><span class="line">        current_fragment = fragment;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h4 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h4><p>前往<a href="https://github.com" target="_blank" rel="noopener">GitHub官网</a>，登录或注册账号<br>新建仓库，仓库名为<code>yourname.github.io</code>。其中<code>yourname</code>填写你的GitHub账户名，创建成功后，GitHub会自动为你开启Github pages</p>
+<h4 id="Hexo部署"><a href="#Hexo部署" class="headerlink" title="Hexo部署"></a>Hexo部署</h4><p>使用Hexo建站完成并测试后，即可发布到github。<br><a id="more"></a></p>
+<h5 id="修改-config-yml文件"><a href="#修改-config-yml文件" class="headerlink" title="修改_config_yml文件"></a>修改<code>_config_yml</code>文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  message: commit message</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">repo</td>
+<td style="text-align:left">GitHub仓库URL</td>
+</tr>
+<tr>
+<td style="text-align:left">branch</td>
+<td style="text-align:left">提交到哪个分支(可选)</td>
+</tr>
+<tr>
+<td style="text-align:left">message</td>
+<td style="text-align:left">自定义提交信息(可选)</td>
+</tr>
+</tbody>
+</table>
+<h5 id="安装hexo-deployer-git模块"><a href="#安装hexo-deployer-git模块" class="headerlink" title="安装hexo-deployer-git模块"></a>安装<code>hexo-deployer-git</code>模块</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h5 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo generate</span><br><span class="line">&gt; hexo deploy</span><br></pre></td></tr></table></figure>
+<p>也可简写成<code>hexo g -d</code>或<code>hexo d -g</code></p>
+<p>部署完成后，即可访问 <a href="https://yourname.github.io/" target="_blank" rel="noopener">https://yourname.github.io/</a> 查看你的个人网站了</p>
+<h4 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h4><p>GitHub Pages允许为网站绑定自己的域名，替代 <code>yourname.github.io</code> 作为网站的访问地址。</p>
+<p>在Hexo网站项目的<code>source</code>目录下新建文件<code>CNAME</code>，写入你的域名，如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.wenkiwu.com</span><br></pre></td></tr></table></figure></p>
+<p>修改完成后部署</p>
+<p>前往域名注册商添加解析记录</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">主机记录</th>
+<th style="text-align:center">记录类型</th>
+<th style="text-align:center">记录值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">www</td>
+<td style="text-align:center">CNAME</td>
+<td style="text-align:center">yourname.github.io</td>
+</tr>
+<tr>
+<td style="text-align:center">@</td>
+<td style="text-align:center">CNAME</td>
+<td style="text-align:center">yourname.github.io</td>
+</tr>
+</tbody>
+</table>
+<p>设置完成后等待生效</p>
+<h4 id="将网站源文件使用git管理"><a href="#将网站源文件使用git管理" class="headerlink" title="将网站源文件使用git管理"></a>将网站源文件使用git管理</h4><p>在github上创建仓库  </p>
+<p>进入网站项目根目录，执行下面命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; git init</span><br><span class="line">&gt; git remote add origin [repository url]</span><br><span class="line">&gt; git add .</span><br><span class="line">&gt; git commit -m &apos;message&apos;</span><br><span class="line">&gt; git push --set-upstream origin master</span><br></pre></td></tr></table></figure></p>
+<p>在其它电脑上就可获取项目源文件修改并部署<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone [repository url]</span><br></pre></td></tr></table></figure></p>
+<p>进入项目根目录，此电脑已有nodejs并安装hexo的情况下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>新建文件或者修改项目，测试后部署<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure></p>
+<p>将更改提交到远程仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -381,7 +440,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag"># Android</a>
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/GitHub-Pages/" rel="tag"># GitHub Pages</a>
           
         </div>
       
@@ -394,8 +455,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/13/lauch-app-in-other-app/" rel="next" title="Android如何做到应用程序图标隐藏，并由第三方程序启动">
-                <i class="fa fa-chevron-left"></i> Android如何做到应用程序图标隐藏，并由第三方程序启动
+              <a href="/建站/using-hexo-build-personal-site/" rel="next" title="Hexo搭建个人网站">
+                <i class="fa fa-chevron-left"></i> Hexo搭建个人网站
               </a>
             
           </div>
@@ -404,8 +465,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/23/android 6.0-request-permissions/" rel="prev" title="Android 6.0 后 权限申请">
-                Android 6.0 后 权限申请 <i class="fa fa-chevron-right"></i>
+              <a href="/Android/cross-application-screenshot-on-Android 5.0+/" rel="prev" title="Android 5.0以上使用MediaProjection跨应用截屏">
+                Android 5.0以上使用MediaProjection跨应用截屏 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -455,8 +516,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -539,6 +609,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#GitHub-Pages"><span class="nav-number">1.</span> <span class="nav-text">GitHub Pages</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hexo部署"><span class="nav-number">2.</span> <span class="nav-text">Hexo部署</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#修改-config-yml文件"><span class="nav-number">2.1.</span> <span class="nav-text">修改_config_yml文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装hexo-deployer-git模块"><span class="nav-number">2.2.</span> <span class="nav-text">安装hexo-deployer-git模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#部署"><span class="nav-number">2.3.</span> <span class="nav-text">部署</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义域名"><span class="nav-number">3.</span> <span class="nav-text">自定义域名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将网站源文件使用git管理"><span class="nav-number">4.</span> <span class="nav-text">将网站源文件使用git管理</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
